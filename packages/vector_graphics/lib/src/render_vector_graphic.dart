@@ -326,8 +326,8 @@ class RenderAutoVectorGraphic extends RenderBox {
       return;
     }
 
-    final RasterDataWithPaint data =
-        _createRaster(_rasterKey!, _rasterScaleFactor, pictureInfo, _colorPaint);
+    final RasterDataWithPaint data = _createRaster(
+        _rasterKey!, _rasterScaleFactor, pictureInfo, _colorPaint);
     data.count += 1;
 
     assert(!_liveRasterCache.containsKey(_rasterKey!));

@@ -95,6 +95,7 @@ class SvgPicture extends StatelessWidget {
     this.excludeFromSemantics = false,
     this.clipBehavior = Clip.hardEdge,
     this.errorBuilder,
+    this.strategy = RenderingStrategy.auto,
     @Deprecated(
         'No code should use this parameter. It never was implemented properly. '
         'The SVG theme must be set on the bytesLoader.')
@@ -194,6 +195,7 @@ class SvgPicture extends StatelessWidget {
     this.excludeFromSemantics = false,
     this.clipBehavior = Clip.hardEdge,
     this.errorBuilder,
+    this.strategy = RenderingStrategy.auto,
     SvgTheme? theme,
     ui.ColorFilter? colorFilter,
     @Deprecated('Use colorFilter instead.') ui.Color? color,
@@ -259,6 +261,7 @@ class SvgPicture extends StatelessWidget {
     this.excludeFromSemantics = false,
     this.clipBehavior = Clip.hardEdge,
     this.errorBuilder,
+    this.strategy = RenderingStrategy.auto,
     @Deprecated('This no longer does anything.') bool cacheColorFilter = false,
     SvgTheme? theme,
     http.Client? httpClient,
@@ -318,6 +321,7 @@ class SvgPicture extends StatelessWidget {
     this.excludeFromSemantics = false,
     this.clipBehavior = Clip.hardEdge,
     this.errorBuilder,
+    this.strategy = RenderingStrategy.auto,
     SvgTheme? theme,
     @Deprecated('This no longer does anything.') bool cacheColorFilter = false,
   })  : bytesLoader = SvgFileLoader(file, theme: theme),
@@ -368,6 +372,7 @@ class SvgPicture extends StatelessWidget {
     this.excludeFromSemantics = false,
     this.clipBehavior = Clip.hardEdge,
     this.errorBuilder,
+    this.strategy = RenderingStrategy.auto,
     SvgTheme? theme,
     @Deprecated('This no longer does anything.') bool cacheColorFilter = false,
   })  : bytesLoader = SvgBytesLoader(bytes, theme: theme),
@@ -418,6 +423,7 @@ class SvgPicture extends StatelessWidget {
     this.excludeFromSemantics = false,
     this.clipBehavior = Clip.hardEdge,
     this.errorBuilder,
+    this.strategy = RenderingStrategy.auto,
     SvgTheme? theme,
     @Deprecated('This no longer does anything.') bool cacheColorFilter = false,
   })  : bytesLoader = SvgStringLoader(string, theme: theme),
@@ -507,6 +513,8 @@ class SvgPicture extends StatelessWidget {
   /// The color filter, if any, to apply to this widget.
   final ColorFilter? colorFilter;
 
+  final RenderingStrategy strategy;
+
   @override
   Widget build(BuildContext context) {
     return createCompatVectorGraphic(
@@ -520,6 +528,7 @@ class SvgPicture extends StatelessWidget {
       clipBehavior: clipBehavior,
       errorBuilder: errorBuilder,
       colorFilter: colorFilter,
+      strategy: strategy,
       placeholderBuilder: placeholderBuilder,
       clipViewbox: !allowDrawingOutsideViewBox,
       matchTextDirection: matchTextDirection,
