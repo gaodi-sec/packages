@@ -1,3 +1,7 @@
+## 2.1.0
+
+* Added a render strategy selection parameter to optimize SVG rendering performance.
+
 ## 2.0.17
 
 * Implement errorBuilder callback
