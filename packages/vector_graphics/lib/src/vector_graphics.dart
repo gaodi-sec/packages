@@ -42,6 +42,10 @@ enum RenderingStrategy {
   /// Draw the vector graphic as a picture.
   picture,
 
+  /// Draw the vector graphic using an automatic mode.
+  ///
+  /// For small images, it attempts to generate a raster cache.
+  /// If no raster cache is available, it falls back to picture mode rendering.
   auto,
 }
 

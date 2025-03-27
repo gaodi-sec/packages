@@ -513,6 +513,7 @@ class SvgPicture extends StatelessWidget {
   /// The color filter, if any, to apply to this widget.
   final ColorFilter? colorFilter;
 
+  /// How the svg will be rendered by the Flutter framework.
   final RenderingStrategy strategy;
 
   @override
