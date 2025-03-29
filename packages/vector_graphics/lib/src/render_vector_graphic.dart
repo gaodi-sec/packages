@@ -411,6 +411,7 @@ class RenderAutoVectorGraphic extends RenderBox {
     _opacity?.removeListener(_updateOpacity);
     if (_rasterTaskId != 0) {
       SchedulerBinding.instance.cancelFrameCallbackWithId(_rasterTaskId);
+      _globalRasterDelayFrames--;
     }
     super.dispose();
   }
